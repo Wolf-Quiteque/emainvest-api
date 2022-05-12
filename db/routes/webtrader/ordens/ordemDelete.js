@@ -1,6 +1,6 @@
 const { ObjectId } = require("bson");
 const router = require("express").Router();
-const clientPromise = require("../../../DB/conexao");
+const clientPromise = require("../../../db/conexao");
 
 router.delete("/", async (req, res) => {
   const client = await clientPromise;

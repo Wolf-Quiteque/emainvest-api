@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const clientPromise = require("../../DB/conexao");
+const clientPromise = require("../../db/conexao");
 
 router.post("/", async (req, res) => {
   if (client) {
