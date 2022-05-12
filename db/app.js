@@ -62,17 +62,18 @@ app.get("/", async (req, res) => {
   // } catch (error) {
   //   console.log(error);
   // }
-  const uri = process.env.MONGODB_URI;
-  const options = {};
-  let client;
-  let clientPromise;
-  client = new MongoClient(uri, options);
-  clientPromise = await client.connect();
-  if (clientPromise) {
-    res.send(true);
-  } else {
-    res.send(false);
-  }
+  // const uri = process.env.MONGODB_URI;
+  // const options = {};
+  // let client;
+  // let clientPromise;
+  // client = new MongoClient(uri, options);
+  // clientPromise = await client.connect();
+  // if (clientPromise) {
+  //   res.send(true);
+  // } else {
+  //   res.send(false);
+  // }
+  res.send("obaa");
 });
 
 //routes
