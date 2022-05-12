@@ -1,4 +1,5 @@
 const express = require("express");
+const { MongoClient } = require("mongodb");
 const dotenv = require("dotenv");
 // const clientPromise = require("./db/conexao");
 
@@ -61,7 +62,17 @@ app.get("/", async (req, res) => {
   // } catch (error) {
   //   console.log(error);
   // }
-  res.send(process.env.NODE_ENV);
+  const uri = process.env.MONGODB_URI;
+  const options = {};
+  let client;
+  let clientPromise;
+  client = new MongoClient(uri, options);
+  clientPromise = await client.connect();
+  if (clientPromise) {
+    res.send(true);
+  } else {
+    res.send(false);
+  }
 });
 
 //routes
