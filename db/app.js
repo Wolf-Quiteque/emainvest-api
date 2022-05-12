@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const clientPromise = require("./db/conexao");
+// const clientPromise = require("./db/conexao");
 
 const app = express();
 app.use(express.json());
