@@ -6,7 +6,7 @@ router.delete("/", async (req, res) => {
   const client = await clientPromise;
   if (client) {
     res.send("Base de dados conectada");
-  } else res.send("Base de dados nao conectada");
+  } else res.send("Base de dados nao conectada!");
 });
 
 router.delete("/:id", async (req, res) => {
