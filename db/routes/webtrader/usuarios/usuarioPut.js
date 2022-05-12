@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const clientPromise= require("./../../../DB/conexao")
+const clientPromise= require("../../../DB/conexao")
 const { ObjectId }= require("bson")
 
 
