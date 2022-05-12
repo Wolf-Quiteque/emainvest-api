@@ -61,7 +61,7 @@ app.get("/", async (req, res) => {
   // } catch (error) {
   //   console.log(error);
   // }
-  res.send(process.env.MONGODB_URI);
+  res.send(process.env.NODE_ENV);
 });
 
 //routes
