@@ -1,5 +1,4 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
 const dotenv = require("dotenv");
 // const clientPromise = require("./db/conexao");
 
