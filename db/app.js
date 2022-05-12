@@ -51,16 +51,17 @@ dotenv.config();
 const port = 3000;
 
 app.get("/", async (req, res) => {
-  try {
-    const client = await clientPromise;
-    if (client) {
-      res.send(true);
-    } else {
-      res.send("something went wrong");
-    }
-  } catch (error) {
-    console.log(error);
-  }
+  // try {
+  //   const client = await clientPromise;
+  //   if (client) {
+  //     res.send(true);
+  //   } else {
+  //     res.send("something went wrong");
+  //   }
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  res.send("good");
 });
 
 //routes
