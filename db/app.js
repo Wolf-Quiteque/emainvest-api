@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const clientPromise = require("./db/conexao");
 
 const app = express();
 app.use(express.json());
@@ -49,8 +50,17 @@ dotenv.config();
 
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("hello");
+app.get("/", async (req, res) => {
+  try {
+    const client = await clientPromise;
+    if (client) {
+      res.send(true);
+    } else {
+      res.send("something went wrong");
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 //routes
