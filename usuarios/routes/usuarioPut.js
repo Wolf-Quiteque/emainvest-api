@@ -9,7 +9,7 @@ router.put("/:id", async (req, res) => {
   try {
     axios
       .put(
-        "http://192.168.10.148:3000/api/db/webtrader/usuario/put/" +
+        "https://db-wolf-quiteque.vercel.app/api/db/webtrader/usuario/put/" +
           req.params.id,
         req.body
       )

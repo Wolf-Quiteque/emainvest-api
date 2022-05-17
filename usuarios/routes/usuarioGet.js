@@ -8,7 +8,9 @@ router.get("/", function (req, res) {
 router.get("/usuarios", async (req, res) => {
   try {
     axios
-      .get("http://192.168.10.148:3000/api/db/webtrader/usuario/get/usuarios/")
+      .get(
+        "https://db-wolf-quiteque.vercel.app/api/db/webtrader/usuario/get/usuarios/"
+      )
       .then((response) => {
         res.status(200).json(response.data);
       });
@@ -21,7 +23,7 @@ router.get("/:id", async (req, res) => {
   try {
     axios
       .get(
-        "http://192.168.10.148:3000/api/db/webtrader/usuario/get/" +
+        "https://db-wolf-quiteque.vercel.app/api/db/webtrader/usuario/get/" +
           req.params.id
       )
       .then((response) => {

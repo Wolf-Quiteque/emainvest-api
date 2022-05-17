@@ -9,7 +9,7 @@ router.delete("/:id", async (req, res) => {
   try {
     axios
       .delete(
-        "http://192.168.10.148:3000/api/db/webtrader/usuario/delete/" +
+        "https://db-wolf-quiteque.vercel.app/api/db/webtrader/usuario/delete/" +
           req.params.id
       )
       .then((response) => {
