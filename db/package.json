@@ -17,5 +17,5 @@
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
-  "description": "db-api"
+  "description": "db-api and more"
 }
