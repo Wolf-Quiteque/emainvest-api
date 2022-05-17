@@ -10,7 +10,7 @@ router.post("/novo", async (req, res) => {
     console.log(req.body);
     axios
       .post(
-        "http://192.168.10.201:3000/api/relatorio/empresa/post/cadastro",
+        "https://db-wolf-quiteque.vercel.app/api/relatorio/empresa/post/cadastro",
         req.body
       )
       .then((response) => {

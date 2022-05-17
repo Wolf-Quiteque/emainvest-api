@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
 //route para buscar todas empresas
 router.get("/empresa", async (req, res) => {
   try {
-    axios("http://192.168.10.148:3000/api/db/empresa/get/empresas").then(
-      (response) => {
-        res.status(200).json(response.data);
-      }
-    );
+    axios(
+      "https://db-wolf-quiteque.vercel.app/api/db/empresa/get/empresas"
+    ).then((response) => {
+      res.status(200).json(response.data);
+    });
   } catch (error) {
     res.status(500).json(error);
   }

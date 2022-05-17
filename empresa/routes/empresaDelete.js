@@ -9,7 +9,8 @@ router.delete("/:id", async (req, res) => {
   try {
     axios
       .delete(
-        "http://192.168.10.145:3000/api/db/empresa/delete/" + req.params.id
+        "https://db-wolf-quiteque.vercel.app/api/db/empresa/delete/" +
+          req.params.id
       )
       .then((response) => {
         res.status(200).json(response.status);

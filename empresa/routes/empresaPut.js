@@ -10,7 +10,8 @@ router.put("/:id", async (req, res) => {
   try {
     axios
       .put(
-        "http://192.168.10.148:3000/api/db/empresa/put/" + req.params.id,
+        "https://db-wolf-quiteque.vercel.app/api/db/empresa/put/" +
+          req.params.id,
         req.body
       )
       .then((response) => {
