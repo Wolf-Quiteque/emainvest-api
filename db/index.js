@@ -47,7 +47,7 @@ const ordemPostRoute = require("./routes/webtrader/ordens/ordemPost");
 const ordemPutRoute = require("./routes/webtrader/ordens/ordemPut");
 const ordemDeleteRoute = require("./routes/webtrader/ordens/ordemDelete");
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //routes
 app.use("/api/db/usuarios/get", authRoute);
