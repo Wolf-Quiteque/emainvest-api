@@ -16,16 +16,10 @@ app.use(function (req, res, next) {
 
 dotenv.config();
 //routes
-const authRoute = require("./routes/usuarios/auth");
 const empresaGetRoute = require("./routes/empresas/empresaGet");
 const empresaPostRoute = require("./routes/empresas/empresaPost");
 const empresaPutRoute = require("./routes/empresas/empresaPut");
 const empresaDeleteRoute = require("./routes/empresas/empresaDelete");
-
-const usuarioPostRoute = require("./routes/usuarios/usuarioPost");
-const usuarioGetRoute = require("./routes/usuarios/usuarioGet");
-const usuarioDeleteRoute = require("./routes/usuarios/usuarioDelete");
-const usuarioPutRoute = require("./routes/usuarios/usuarioPut");
 
 const relatorioGetRoute = require("./routes/relatorio/relatorioGet");
 const relatorioPostRoute = require("./routes/relatorio/relatorioPost");
@@ -42,24 +36,23 @@ const usuarioWbGetRoute = require("./routes/webtrader/usuarios/usuarioGet");
 const usuarioWbDeleteRoute = require("./routes/webtrader/usuarios/usuarioDelete");
 const usuarioWbPutRoute = require("./routes/webtrader/usuarios/usuarioPut");
 
+const usuarioIpoPostRoute = require("./routes/ipo/usuarios/usuarioPost");
+const usuarioIpoGetRoute = require("./routes/ipo/usuarios/usuarioGet");
+const usuarioIpoDeleteRoute = require("./routes/ipo/usuarios/usuarioDelete");
+const usuarioIpoPutRoute = require("./routes/ipo/usuarios/usuarioPut");
+
 const ordemGetRoute = require("./routes/webtrader/ordens/ordemGet");
 const ordemPostRoute = require("./routes/webtrader/ordens/ordemPost");
 const ordemPutRoute = require("./routes/webtrader/ordens/ordemPut");
 const ordemDeleteRoute = require("./routes/webtrader/ordens/ordemDelete");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 //routes
-app.use("/api/db/usuarios/get", authRoute);
 app.use("/api/db/empresa/get", empresaGetRoute);
 app.use("/api/db/empresa/post", empresaPostRoute);
 app.use("/api/db/empresa/put", empresaPutRoute);
 app.use("/api/db/empresa/delete", empresaDeleteRoute);
-
-app.use("/api/db/usuario/post", usuarioPostRoute);
-app.use("/api/db/usuario/Get", usuarioGetRoute);
-app.use("/api/db/usuario/delete", usuarioDeleteRoute);
-app.use("/api/db/usuarios/put", usuarioPutRoute);
 
 app.use("/api/db/relatorio/get", relatorioGetRoute);
 app.use("/api/db/relatorio/post", relatorioPostRoute);
@@ -75,6 +68,11 @@ app.use("/api/db/webtrader/usuario/post", usuarioWbPostRoute);
 app.use("/api/db/webtrader/usuario/get", usuarioWbGetRoute);
 app.use("/api/db/webtrader/usuario/delete", usuarioWbDeleteRoute);
 app.use("/api/db/webtrader/usuario/put", usuarioWbPutRoute);
+
+app.use("/api/db/ipo/usuario/post", usuarioIpoPostRoute);
+app.use("/api/db/ipo/usuario/get", usuarioIpoGetRoute);
+app.use("/api/db/ipo/usuario/delete", usuarioIpoDeleteRoute);
+app.use("/api/db/ipo/usuario/put", usuarioIpoPutRoute);
 
 app.use("/api/db/webtrader/ordem/post", ordemPostRoute);
 app.use("/api/db/webtrader/ordem/get", ordemGetRoute);
