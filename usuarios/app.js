@@ -1,13 +1,16 @@
 const express = require("express");
 
-const axios = require("axios");
-
 //criando rotas ou directorio
 
-const usuarioGetRoute = require("./routes/usuarioGet");
-const usuarioPostRoute = require("./routes/usuarioPost");
-const usuarioDeleteRoute = require("./routes/usuarioDelete");
-const usuarioPutRoute = require("./routes/usuarioPut");
+const usuarioWbGetRoute = require("./routes/webtrader/usuarioGet");
+const usuarioWbPostRoute = require("./routes/webtrader/usuarioPost");
+const usuarioWbDeleteRoute = require("./routes/webtrader/usuarioDelete");
+const usuarioWbPutRoute = require("./routes/webtrader/usuarioPut");
+
+const usuarioIpoGetRoute = require("./routes/ipo/usuarioGet");
+const usuarioIpoPostRoute = require("./routes/ipo/usuarioPost");
+const usuarioIpoDeleteRoute = require("./routes/ipo/usuarioDelete");
+const usuarioIpoPutRoute = require("./routes/ipo/usuarioPut");
 
 const app = express();
 //json
@@ -24,11 +27,16 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/api/usuario/get", usuarioGetRoute);
-app.use("/api/usuario/post", usuarioPostRoute);
-app.use("/api/usuario/delete", usuarioDeleteRoute);
-app.use("/api/usuario/put", usuarioPutRoute);
+app.use("/api/wb/usuario/get", usuarioWbGetRoute);
+app.use("/api/wb/usuario/post", usuarioWbPostRoute);
+app.use("/api/wb/usuario/delete", usuarioWbDeleteRoute);
+app.use("/api/wb/usuario/put", usuarioWbPutRoute);
 
-app.listen(3000, function (req, res) {
+app.use("/api/ipo/usuario/get", usuarioIpoGetRoute);
+app.use("/api/ipo/usuario/post", usuarioIpoPostRoute);
+app.use("/api/ipo/usuario/delete", usuarioIpoDeleteRoute);
+app.use("/api/ipo/usuario/put", usuarioIpoPutRoute);
+
+app.listen(3003, function (req, res) {
   console.log("servidor rodando!");
 });
