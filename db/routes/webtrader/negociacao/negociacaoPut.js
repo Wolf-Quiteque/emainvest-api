@@ -7,7 +7,7 @@ router.put("/:id", async (req, res) => {
   const db = client.db("Webtrader");
   try {
     const resultado = await db
-      .collection("negociacao")
+      .collection("negociacoes")
       .updateOne({ _id: new ObjectId(req.params.id) }, { $set: req.body });
     console.log(resultado);
     res.status(200).json("Actualizado com Sucessso");

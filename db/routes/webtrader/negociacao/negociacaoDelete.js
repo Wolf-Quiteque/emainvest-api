@@ -14,7 +14,7 @@ router.delete("/:id", async (req, res) => {
   const db = client.db("Webtrader");
   try {
     const resultado = await db
-      .collection("negociacao")
+      .collection("negociacoes")
       .deleteOne({ _id: new ObjectId(req.params.id) });
     console.log(resultado);
     res.status(200).json("eliminado");
