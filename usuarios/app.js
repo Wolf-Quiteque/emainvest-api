@@ -37,6 +37,4 @@ app.use("/api/ipo/usuario/post", usuarioIpoPostRoute);
 app.use("/api/ipo/usuario/delete", usuarioIpoDeleteRoute);
 app.use("/api/ipo/usuario/put", usuarioIpoPutRoute);
 
-app.listen(3003, function (req, res) {
-  console.log("servidor rodando!");
-});
+app.listen(3003, () => console.log("servidor rodando"));
